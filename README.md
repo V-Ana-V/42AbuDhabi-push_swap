@@ -42,31 +42,31 @@ Let's break down all the code:
 all: $(NAME)
 ```
 all is a standard target in Makefiles that is intended to build the main or default artifacts of the project. When we run make without specifying a target, make will look for the all target by default.
-$(NAME) is a variable that represents the name of the final executable program that this Makefile is intended to build. By placing $(NAME) as a dependency of all, we're telling make that in order to complete the all target, it must first complete the $(NAME) target.
+`$(NAME)` is a variable that represents the name of the final executable program that this Makefile is intended to build. By placing $(NAME) as a dependency of all, we're telling make that in order to complete the all target, it must first complete the $(NAME) target.
 ```makefile
 $(NAME): $(LIBFT) $(OBJS)
 ```
-This line defines how to build the $(NAME) target. It states that $(NAME) depends on $(LIBFT) and $(OBJS).
-$(LIBFT) is a variable representing the library that your program depends on. The presence of this dependency ensures that the library is built before trying to link it when compiling the main program.
-$(OBJS) represents the object files that are generated from your source files. These are the intermediate .o files created during the compilation of your program's source code.
+This line defines how to build the $(NAME) target. It states that `$(NAME)` depends on `$(LIBFT)` and `$(OBJS)`.
+`$(LIBFT)` is a variable representing the library that your program depends on. The presence of this dependency ensures that the library is built before trying to link it when compiling the main program.
+`$(OBJS)` represents the object files that are generated from your source files. These are the intermediate .o files created during the compilation of your program's source code.
 The command
 ```makefile
 $(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 ```
-tells make how to actually create the $(NAME) executable.
-$(CC) is the compiler being used, typically gcc or clang.
-$(CFLAGS) represents compiler flags that should be applied, such as -Wall for all warnings, -Wextra for extra warnings, etc.
--o $(NAME) specifies the output file name for the compiled executable.
-$(OBJS) is the list of object files to be linked together.
+tells make how to actually create the `$(NAME)` executable.
+`$(CC)` is the compiler being used, typically gcc or clang.
+`$(CFLAGS)` represents compiler flags that should be applied, such as -Wall for all warnings, -Wextra for extra warnings, etc.
+-o `$(NAME)` specifies the output file name for the compiled executable.
+`$(OBJS)` is the list of object files to be linked together.
 ```makefile
 $(LIBFT)
 ```
-This rule specifies how to build the $(LIBFT) target, which represents the libft library.
+This rule specifies how to build the `$(LIBFT)` target, which represents the libft library.
 ```makefile
 $(MAKE) -C $(LIBFT_DIR)
 ```
-invokes make on the directory specified by $(LIBFT_DIR), which contains the libft Makefile and source code. The -C option tells make to change to that directory before starting the build. This line ensures that the libft library is compiled before it is needed for linking with the main program.
-Together, these parts of the Makefile ensure that your libft library is compiled first, then your program's object files are compiled, and finally, everything is linked together to create the final executable named $(NAME).
+invokes make on the directory specified by `$(LIBFT_DIR)`, which contains the libft Makefile and source code. The -C option tells make to change to that directory before starting the build. This line ensures that the libft library is compiled before it is needed for linking with the main program.
+Together, these parts of the Makefile ensure that your libft library is compiled first, then your program's object files are compiled, and finally, everything is linked together to create the final executable named `$(NAME)`.
 
 ### Cleaning up
 ```makefile
