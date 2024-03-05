@@ -28,6 +28,7 @@ This section defines the executable name, compiler (using cc), compiler flags, s
 
 ### Compilation Rules
 
+```makefile
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
@@ -35,11 +36,12 @@ $(NAME): $(LIBFT) $(OBJS)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
+```
 
 The all rule is the default, making the push_swap executable. It depends on the $(LIBFT) rule to compile the libft library before compiling the push_swap sources. The $(NAME) rule then links the object files with the libft library.
 
 ### Cleaning up
-
+```makefile
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
@@ -49,12 +51,15 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
+```
 
 These rules manage cleaning up object files and executables for both push_swap and libft, ensuring a clean working environment.
 
 ### How to Use
 To compile the program, simply run:
+```bash
 make
+```
 
 To clean up object files, use:
 make clean
