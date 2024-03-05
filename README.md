@@ -46,7 +46,7 @@ all is a standard target in Makefiles that is intended to build the main or defa
 ```makefile
 $(NAME): $(LIBFT) $(OBJS)
 ```
-This line defines how to build the $(NAME) target. It states that `$(NAME)` depends on `$(LIBFT)` and `$(OBJS)`.
+This line defines how to build the `$(NAME)` target. It states that `$(NAME)` depends on `$(LIBFT)` and `$(OBJS)`.
 `$(LIBFT)` is a variable representing the library that your program depends on. The presence of this dependency ensures that the library is built before trying to link it when compiling the main program.
 `$(OBJS)` represents the object files that are generated from your source files. These are the intermediate .o files created during the compilation of your program's source code.
 The command
