@@ -62,10 +62,16 @@ make
 ```
 
 To clean up object files, use:
+```bash
 make clean
+```
 
 For a full clean (including the executable), use:
+```bash
 make fclean
+```
 
 And to recompile everything from scratch, use:
+```bash
 make re
+```
