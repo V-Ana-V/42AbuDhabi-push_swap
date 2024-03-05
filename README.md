@@ -21,7 +21,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = main.c utility_functions.c # Add all your .c files for push_swap here
 OBJS = $(SRCS:.c=.o)
 LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
+LIBFT = $(LIBFT_DIR)/libft.a```
 
 This section defines the executable name, compiler (using cc), compiler flags, source files, and object files for push_swap. It also specifies the location and target for the libft library.
 
