@@ -42,7 +42,7 @@ Let's break down all the code:
 all: $(NAME)
 ```
 all is a standard target in Makefiles that is intended to build the main or default artifacts of the project. When we run make without specifying a target, make will look for the all target by default.
-`$(NAME)` is a variable that represents the name of the final executable program that this Makefile is intended to build. By placing $(NAME) as a dependency of all, we're telling make that in order to complete the all target, it must first complete the $(NAME) target.
+`$(NAME)` is a variable that represents the name of the final executable program that this Makefile is intended to build. By placing `$(NAME)` as a dependency of all, we're telling make that in order to complete the all target, it must first complete the $(NAME) target.
 ```makefile
 $(NAME): $(LIBFT) $(OBJS)
 ```
