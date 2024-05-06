@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printud.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avelikan <avelikan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 09:14:22 by avelikan          #+#    #+#             */
-/*   Updated: 2024/01/13 18:33:24 by avelikan         ###   ########.fr       */
+/*   Created: 2024/01/15 10:43:54 by avelikan          #+#    #+#             */
+/*   Updated: 2024/01/15 10:43:57 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_printud(unsigned int nb)
 {

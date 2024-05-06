@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avelikan <avelikan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 09:16:48 by avelikan          #+#    #+#             */
-/*   Updated: 2024/01/13 17:03:12 by avelikan         ###   ########.fr       */
+/*   Created: 2024/01/15 10:41:25 by avelikan          #+#    #+#             */
+/*   Updated: 2024/01/15 10:41:29 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	print_fsp(char fsp, va_list args)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avelikan <avelikan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 09:15:04 by avelikan          #+#    #+#             */
-/*   Updated: 2024/01/13 19:08:21 by avelikan         ###   ########.fr       */
+/*   Created: 2024/01/15 10:42:36 by avelikan          #+#    #+#             */
+/*   Updated: 2024/01/15 10:42:39 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	handle_minus(int *nb)
 {

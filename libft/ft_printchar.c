@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avelikan <avelikan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 05:00:19 by avelikan          #+#    #+#             */
-/*   Updated: 2024/01/13 16:55:31 by avelikan         ###   ########.fr       */
+/*   Created: 2024/01/15 10:40:45 by avelikan          #+#    #+#             */
+/*   Updated: 2024/01/15 10:40:50 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_printchar(int c)
 {

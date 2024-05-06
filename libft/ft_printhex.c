@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avelikan <avelikan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 09:15:51 by avelikan          #+#    #+#             */
-/*   Updated: 2024/01/13 18:31:22 by avelikan         ###   ########.fr       */
+/*   Created: 2024/01/15 10:42:04 by avelikan          #+#    #+#             */
+/*   Updated: 2024/01/15 10:42:08 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_printhex(unsigned int nb, char c)
 {
