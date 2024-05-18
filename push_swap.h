@@ -7,18 +7,27 @@
 
 typedef struct s_nodes
 {
-    int             number;
-    int             index;
-    int             cost_p;
-    bool            above_med;
-    bool            cheapest;
-    struct s_nodes  *target;
-    struct s_nodes  *next;
-    struct s_nodes  *prev;
+	int             number;
+	int             index;
+	int             cost_p;
+	bool            above_med;
+	bool            cheapest;
+	struct s_nodes  *target;
+	struct s_nodes  *next;
+	struct s_nodes  *prev;
 }   t_nodes;
 
-//check_err.c
+typedef struct s_arr
+{
+	char	**arr;
+	int		len;
+}   t_arr;
 
+//check_err.c
+int		not_number(char *s);
+int		duplicates_present(t_nodes	*stack, int	n);
+void	free_stack(t_nodes	**stack);
+void	free_and_exit(t_nodes **stack);
 
 //rotate.c and push_swap_cmnds.c
 void	r_one(t_nodes **stack, char stack_name, bool reverse);
@@ -47,4 +56,5 @@ void	set_stack_indices(t_nodes *stack);
 
 //sort.c
 void    sort_stacks(t_nodes **a, t_nodes **b);
+
 #endif

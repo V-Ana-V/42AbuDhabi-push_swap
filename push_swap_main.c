@@ -37,8 +37,4 @@ int	main(int ac, char **av)
 	free_st(&a);
 	return (0);
 }
-	//check all errors in input(1)
-	//if everything is fine, we proceed to analysis(2)
-	//2.1: the transformation of char arguments to numbers
-	//2.2: 
 

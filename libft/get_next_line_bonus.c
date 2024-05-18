@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "libft.h"
 
 void	buf_append(t_buffer *buffer, char *buf_read, ssize_t mem_read)
 {
@@ -43,7 +43,7 @@ int	buf_update(t_buffer *buffer)
 	char	*new_buffer;
 	size_t	i;
 
-	nl = ft_strchr(buffer->buf, '\n', buffer->len);
+	nl = ft_strchr_gnl(buffer->buf, '\n', buffer->len);
 	if (nl == 0 || buffer->len == nl)
 	{
 		set_buffer(buffer, NULL, 0);
@@ -72,7 +72,7 @@ char	*buf_extract(t_buffer buffer)
 	size_t	i;
 	size_t	x;
 
-	nl = ft_strchr(buffer.buf, '\n', buffer.len);
+	nl = ft_strchr_gnl(buffer.buf, '\n', buffer.len);
 	if (nl == 0)
 		x = buffer.len + 1;
 	else
@@ -109,7 +109,7 @@ void	read_line(int fd, t_buffer *buffer)
 		x = buf_expand(mem_read, buf_read, buffer);
 		if (x == 0)
 			return ;
-		if (ft_strchr(buf_read, '\n', mem_read) != 0)
+		if (ft_strchr_gnl(buf_read, '\n', mem_read) != 0)
 			break ;
 	}
 	free(buf_read);

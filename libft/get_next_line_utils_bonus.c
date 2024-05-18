@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "libft.h"
 
-size_t	ft_strchr(const char *buffer, char c, size_t len)
+size_t	ft_strchr_gnl(const char *buffer, char c, size_t len)
 {
 	size_t	i;
 

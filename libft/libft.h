@@ -97,7 +97,7 @@ int	ft_printud(unsigned int nb);
 int	ft_printhex(unsigned int nb, char c);
 int	ft_printf(const char *str, ...);
 
-size_t	ft_strchr(const char *buffer, char c, size_t len);
+size_t	ft_strchr_gnl(const char *buffer, char c, size_t len);
 void	set_buffer(t_buffer *buffer, char *buf_buf, size_t buf_len);
 void	buf_append(t_buffer *buffer, char *buf_read, ssize_t mem_read);
 int		buf_expand(ssize_t mem_read, char *buf_read, t_buffer *buffer);
