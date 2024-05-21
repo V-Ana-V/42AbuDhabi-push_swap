@@ -14,9 +14,6 @@
 
 static int	handle_minus(int *nb)
 {
-	int	count;
-
-	count = 0;
 	if (*nb < 0)
 	{
 		if (write(1, "-", 1) == -1)
