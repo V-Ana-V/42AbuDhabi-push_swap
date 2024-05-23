@@ -27,15 +27,6 @@ int	st_len(t_nodes  *stack)
     return (l);
 }
 
-t_nodes	*find_last(t_nodes *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
-}
-
 bool already_sorted(t_nodes *stack)
 {
     if (!stack)

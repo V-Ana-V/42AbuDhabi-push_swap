@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-bool	is_separator(char c)
+static bool	is_separator(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n' || c == '\v'
 		|| c == '\f' || c == '\r' || c == ',');
@@ -48,8 +48,8 @@ static t_arr	create_arr(char const *s)
 	int		i;
 	t_arr	result;
 
-	if (!s)
-		return ((t_arr){.arr = NULL, .len = 0});
+	if (!s || !(*s))
+		return ((t_arr){.arr = NULL, .len = 0, .malloc_fail = false});
 	w = 0;
 	i = 0;
 	while (*(s + i))
@@ -59,10 +59,13 @@ static t_arr	create_arr(char const *s)
 			w++;
 		i++;
 	}
+	if (w == 0)
+		return ((t_arr){.arr = NULL, .len = 0, .malloc_fail = false});
 	result.arr = (char **)malloc(w * sizeof(char *));
 	if (result.arr == NULL)
-		return ((t_arr){.arr = NULL, .len = 0});
+		return ((t_arr){.arr = NULL, .len = 0, .malloc_fail = true});
 	result.len = w;
+	result.malloc_fail = false;
 	return (result);
 }
 
@@ -73,8 +76,10 @@ t_arr	parse_one(char const *s)
 	char	**res_arr;
 
 	result = create_arr(s);
-	if (!result.arr)
-		return ((t_arr){.arr = NULL, .len = 0});
+	if (!result.arr && result.malloc_fail == true)
+		return ((t_arr){.arr = NULL, .len = 0, .malloc_fail = true});
+	else if (!result.arr)
+		return ((t_arr){.arr = NULL, .len = 0, .malloc_fail = false});
 	res_arr = result.arr;
 	i = 0;
 	while (*(s + i))
@@ -84,7 +89,8 @@ t_arr	parse_one(char const *s)
 		{
 			*res_arr = ft_substr(s, i, wordlen(s, i));
 			if (!(*res_arr))
-				return ((t_arr){.arr = free_previous(result.arr, res_arr), .len = 0});
+				return ((t_arr){.arr = free_previous(result.arr, res_arr),
+					.len = 0, .malloc_fail = true});
 			(res_arr)++;
 		}
 		i++;
@@ -92,19 +98,24 @@ t_arr	parse_one(char const *s)
 	return (result);
 }
 
-int main(void)
-{
-	char	*s;
-	t_arr	arr;
-	int		i;
+// int	main(void)
+// {
+// 	char	*s;
+// 	t_arr	arr;
+// 	int		i;
 
-	i = 0;
-	s = "2636       \n\n\n       ,,,56565,,,,5656    5656623,8    8 ,9,0,8,6,5,,";
-	arr = parse_one(s);
-	while (i < arr.len)
-	{
-		ft_printf("%s\n", arr.arr[i]);
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	s = "      h  \n\n\nnn   ";
+// 	arr = parse_one(s);
+// 	ft_printf("%d\n", arr.len);
+// 	ft_printf("%p\n", arr.arr);
+// 	ft_printf("%d\n", arr.malloc_fail);
+// 	if (arr.arr == NULL)
+// 		ft_printf("The array is NULL");
+// 	while (i < arr.len)
+// 	{
+// 		ft_printf("%s\n", arr.arr[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }

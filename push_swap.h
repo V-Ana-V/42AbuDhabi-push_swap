@@ -4,6 +4,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include <stdio.h>
 
 typedef struct s_nodes
 {
@@ -21,13 +22,23 @@ typedef struct s_arr
 {
 	char	**arr;
 	int		len;
+	bool	malloc_fail;
 }   t_arr;
 
+//parse1.c parse2.c
+void	free_array(t_arr *result);
+t_arr	parse_one(char const *s);
+t_arr	make_args(int ac, char **av);
+
 //check_err.c
-int		not_number(char *s);
-int		duplicates_present(t_nodes	*stack, int	n);
+bool	is_number(char *s);
+void	non_numbers_check(t_arr	args);
+bool	duplicates_present(t_nodes	*stack, int	n);
+
+//create_stack_a.c
+void	build_stack_a(t_nodes **stack_a, t_arr args);
 void	free_stack(t_nodes	**stack);
-void	free_and_exit(t_nodes **stack);
+t_nodes	*find_last(t_nodes *stack);
 
 //rotate.c and push_swap_cmnds.c
 void	r_one(t_nodes **stack, char stack_name, bool reverse);
@@ -37,12 +48,10 @@ void    s_one(t_nodes **stack, char stack_name);
 void    s_both(t_nodes **a, t_nodes **b);
 
 //stack_part1.c & utils_part2.c
-void    build_stack_a(t_nodes **a, char **av);
 t_nodes	*get_cheapest(t_nodes *stack);
 void	node_on_top(t_nodes **stack, t_nodes *top_node, char stack_name);
 bool    already_sorted(t_nodes *stack);
 int     st_len(t_nodes  *stack);
-t_nodes	*find_last(t_nodes *stack);
 t_nodes *find_min(t_nodes *stack);
 t_nodes *find_max(t_nodes *stack);
 
