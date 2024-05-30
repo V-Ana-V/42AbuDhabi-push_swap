@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/28 13:34:36 by avelikan          #+#    #+#             */
+/*   Updated: 2024/05/28 13:34:39 by avelikan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -43,25 +55,27 @@ t_nodes	*find_last(t_nodes *stack);
 //rotate.c and push_swap_cmnds.c
 void	r_one(t_nodes **stack, char stack_name, bool reverse);
 void    r_both(t_nodes **a, t_nodes **b, bool reverse);
-void    push(t_nodes **to, t_nodes **from, char from_stack_name);
+void    push(t_nodes **to, t_nodes **from, char to_stack_name);
 void    s_one(t_nodes **stack, char stack_name);
 void    s_both(t_nodes **a, t_nodes **b);
 
-//stack_part1.c & utils_part2.c
-t_nodes	*get_cheapest(t_nodes *stack);
-void	node_on_top(t_nodes **stack, t_nodes *top_node, char stack_name);
-bool    already_sorted(t_nodes *stack);
+//utils1.c & utils2.c
+bool	already_sorted(t_nodes *stack);
 int     st_len(t_nodes  *stack);
-t_nodes *find_min(t_nodes *stack);
+t_nodes	*get_cheapest(t_nodes *stack);
 t_nodes *find_max(t_nodes *stack);
+void	node_to_top(t_nodes **stack, t_nodes *top_node, char stack_name);
+t_nodes *find_min(t_nodes *stack);
+int		extremum(int x, int y, bool max);
 
-//sort_3nodes.c
-void    sort_3nodes(t_nodes **a);
-
-//set_nodes_params_a.c & set_nodes_params_b
+//set_nodes_params_a.c & set_nodes_params_b.c
+void	set_stack_indices(t_nodes *stack);
+void	set_cheapest(t_nodes *stack);
 void    init_nodes_a(t_nodes *a, t_nodes *b);
 void	init_nodes_b(t_nodes *a, t_nodes *b);
-void	set_stack_indices(t_nodes *stack);
+
+//sort_3nodes.c
+void	sort_3nodes(t_nodes **a);
 
 //sort.c
 void    sort_stacks(t_nodes **a, t_nodes **b);

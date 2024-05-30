@@ -6,7 +6,7 @@
 /*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:26:03 by avelikan          #+#    #+#             */
-/*   Updated: 2024/05/17 10:26:06 by avelikan         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:32:13 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	non_numbers_check(t_arr	args)
 		if (!is_number(args.arr[i]))
 		{
 			free_array(&args);
-			write(2, "Error3\n", 7);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		i++;
@@ -54,11 +54,7 @@ bool	duplicates_present(t_nodes	*stack, int	n)
 	while (stack)
 	{
 		if (stack->number == n)
-		{
-			printf("node number is %d, and the adding number is %d\n", stack->number, n);
 			return (true);
-		}
-		printf("stack pointer is %p, and stack->next pointer is %p\n", stack, stack->next);
 		stack = stack->next;
 	}
 	return (false);

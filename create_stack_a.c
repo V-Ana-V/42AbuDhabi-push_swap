@@ -6,7 +6,7 @@
 /*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:05:12 by avelikan          #+#    #+#             */
-/*   Updated: 2024/05/22 17:05:15 by avelikan         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:32:31 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,14 @@ void	build_stack_a(t_nodes **stack_a, t_arr args)
 		{
 			free_stack(stack_a);
 			free_array(&args);
-			write(2, "Error1\n", 7);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		if (duplicates_present(*stack_a, (int)n))
 		{
 			free_stack(stack_a);
 			free_array(&args);
-			write(2, "Error2\n", 7);
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 		node_append(stack_a, (int)n);

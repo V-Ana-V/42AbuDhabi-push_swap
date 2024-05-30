@@ -6,13 +6,13 @@
 /*   By: avelikan <avelikan@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:06:37 by avelikan          #+#    #+#             */
-/*   Updated: 2024/05/16 12:50:58 by avelikan         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:33:56 by avelikan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void push(t_nodes **to, t_nodes **from, char from_stack_name)
+void push(t_nodes **to, t_nodes **from, char to_stack_name)
 {
     t_nodes *push_node;
 
@@ -33,7 +33,7 @@ void push(t_nodes **to, t_nodes **from, char from_stack_name)
         (*to)->prev = push_node;
 		*to = push_node;
     }
-	ft_printf("p%c\n", from_stack_name);
+	ft_printf("p%c\n", to_stack_name);
 }
 
 static void	swap(t_nodes **stack)
