@@ -31,6 +31,11 @@ int	main(int ac, char **av)
 	}
 	non_numbers_check(args);
 	build_stack_a(&a, args);
+	if (!a)
+	{
+		write(2, "MemErr\n", 7);
+		exit(1);
+	}
 	if (!already_sorted(a))
 	{
 		if (st_len(a) == 2)
