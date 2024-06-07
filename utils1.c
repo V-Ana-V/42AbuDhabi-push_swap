@@ -12,32 +12,32 @@
 
 #include "push_swap.h"
 
-bool already_sorted(t_nodes *stack)
+bool	already_sorted(t_nodes *stack)
 {
-    if (!stack)
-        return (true);
-    while (stack->next)
-    {
-        if (stack->number > stack->next->number)
-            return (false);
-        stack = stack->next;
-    }
-    return (true);
+	if (!stack)
+		return (true);
+	while (stack->next)
+	{
+		if (stack->number > stack->next->number)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }
 
-int	st_len(t_nodes  *stack)
+int	st_len(t_nodes *stack)
 {
-    int l;
+	int	l;
 
-    if (!stack)
-        return (0);
-    l = 0;
-    while (stack)
-    {
-        l++;
-        stack = stack->next;
-    }
-    return (l);
+	if (!stack)
+		return (0);
+	l = 0;
+	while (stack)
+	{
+		l++;
+		stack = stack->next;
+	}
+	return (l);
 }
 
 t_nodes	*get_cheapest(t_nodes *stack)

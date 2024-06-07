@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	set_target_b (t_nodes *a, t_nodes *b)
+static void	set_target_b(t_nodes *a, t_nodes *b)
 {
 	t_nodes	*current_a;
 	t_nodes	*target_node;
@@ -25,12 +25,12 @@ static void	set_target_b (t_nodes *a, t_nodes *b)
 		while (current_a)
 		{
 			if ((current_a->number > b->number)
-			&& (current_a->number < best_match_value))
+				&& (current_a->number < best_match_value))
 			{
 				best_match_value = current_a->number;
 				target_node = current_a;
 			}
-		current_a = current_a->next;
+			current_a = current_a->next;
 		}
 		if (best_match_value == LONG_MAX)
 			b->target = find_min(a);
@@ -42,7 +42,7 @@ static void	set_target_b (t_nodes *a, t_nodes *b)
 
 void	init_nodes_b(t_nodes *a, t_nodes *b)
 {
-    set_stack_indices(a);
-    set_stack_indices(b);
-    set_target_b(a, b);
+	set_stack_indices(a);
+	set_stack_indices(b);
+	set_target_b(a, b);
 }

@@ -76,29 +76,11 @@ t_arr	make_args(int ac, char **av)
 	{
 		av_args = parse_one(av[i]);
 		if (av_args.malloc_fail == true)
-			return (free_array(&result), av_args);
+			free_and_exit_args_only(&result);
 		result = args_append(&result, &av_args);
 		if (result.malloc_fail == true)
-			return (result);
+			free_and_exit_args_only(&result);
 		i++;
 	}
 	return (result);
 }
-
-// int	main(int ac, char **av)
-// {
-// 	t_arr	arr;
-// 	int		i;
-
-// 	i = 0;
-// 	arr = make_args(ac, av);
-// 	printf("//main//Length is: %d\n", arr.len);
-//  	printf("//main//The pointer is: %p\n", arr.arr);
-//  	printf("//main//Malloc fail: %d\n", arr.malloc_fail);
-// 	while (i < arr.len)
-// 	{
-// 		printf("//main//Array member number %d, is: %s\n", i, arr.arr[i]);
-// 		i++;
-// 	}
-// }
-///Dont forget to free the memory allocated for arrays of POINTERS!!!!

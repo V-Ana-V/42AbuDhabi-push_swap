@@ -97,25 +97,3 @@ t_arr	parse_one(char const *s)
 	}
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	char	*s;
-// 	t_arr	arr;
-// 	int		i;
-
-// 	i = 0;
-// 	s = "      h  \n\n\nnn   ";
-// 	arr = parse_one(s);
-// 	ft_printf("%d\n", arr.len);
-// 	ft_printf("%p\n", arr.arr);
-// 	ft_printf("%d\n", arr.malloc_fail);
-// 	if (arr.arr == NULL)
-// 		ft_printf("The array is NULL");
-// 	while (i < arr.len)
-// 	{
-// 		ft_printf("%s\n", arr.arr[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }

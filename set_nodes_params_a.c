@@ -33,7 +33,7 @@ void	set_stack_indices(t_nodes *stack)
 	}
 }
 
-static void	set_target_a (t_nodes *a, t_nodes *b)
+static void	set_target_a(t_nodes *a, t_nodes *b)
 {
 	t_nodes	*current_b;
 	t_nodes	*target_node;
@@ -46,12 +46,12 @@ static void	set_target_a (t_nodes *a, t_nodes *b)
 		while (current_b)
 		{
 			if ((current_b->number < a->number)
-			&& (current_b->number > best_match_value))
+				&& (current_b->number > best_match_value))
 			{
 				best_match_value = current_b->number;
 				target_node = current_b;
 			}
-		current_b = current_b->next;
+			current_b = current_b->next;
 		}
 		if (best_match_value == LONG_MIN)
 			a->target = find_max(b);
@@ -61,7 +61,7 @@ static void	set_target_a (t_nodes *a, t_nodes *b)
 	}
 }
 
-static void set_cost_a(t_nodes *a, t_nodes *b)
+static void	set_cost_a(t_nodes *a, t_nodes *b)
 {
 	int		len_a;
 	int		len_b;
@@ -69,7 +69,7 @@ static void set_cost_a(t_nodes *a, t_nodes *b)
 
 	len_a = st_len(a);
 	len_b = st_len(b);
-	while(a)
+	while (a)
 	{
 		tg = a->target;
 		if (a->above_med && tg->above_med)
@@ -79,9 +79,9 @@ static void set_cost_a(t_nodes *a, t_nodes *b)
 		else
 		{
 			a->cost_p = a->index;
-			if(!(a->above_med))
+			if (!(a->above_med))
 				a->cost_p = len_a - (a->index);
-			if(tg->above_med)
+			if (tg->above_med)
 				a->cost_p += tg->index;
 			else
 				a->cost_p += len_b - tg->index;
@@ -113,9 +113,9 @@ void	set_cheapest(t_nodes *stack)
 
 void	init_nodes_a(t_nodes *a, t_nodes *b)
 {
-    set_stack_indices(a);
-    set_stack_indices(b);
-    set_target_a(a, b);
-    set_cost_a(a,b);
-    set_cheapest(a);
+	set_stack_indices(a);
+	set_stack_indices(b);
+	set_target_a(a, b);
+	set_cost_a(a, b);
+	set_cheapest(a);
 }

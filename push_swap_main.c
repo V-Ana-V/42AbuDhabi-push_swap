@@ -24,18 +24,8 @@ int	main(int ac, char **av)
 	args = make_args(ac, av);
 	if (args.arr == NULL && args.malloc_fail == false)
 		return (0);
-	if (args.arr == NULL && args.malloc_fail == true)
-	{
-		write(2, "MemErr\n", 7);
-		exit(1);
-	}
 	non_numbers_check(args);
-	build_stack_a(&a, args);
-	if (!a)
-	{
-		write(2, "MemErr\n", 7);
-		exit(1);
-	}
+	build_stack_a(&a, &args);
 	if (!already_sorted(a))
 	{
 		if (st_len(a) == 2)

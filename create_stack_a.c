@@ -89,31 +89,23 @@ static void	node_append(t_nodes	**stack, int n)
 	}
 }
 
-void	build_stack_a(t_nodes **stack_a, t_arr args)
+void	build_stack_a(t_nodes **stack_a, t_arr *args)
 {
 	long	n;
 	int		i;
 
 	i = 0;
-	while (i < args.len)
+	while (i < args->len)
 	{
-		n = ft_atol(args.arr[i]);
+		n = ft_atol((args->arr)[i]);
 		if (n > INT_MAX || n < INT_MIN)
-		{
-			free_stack(stack_a);
-			free_array(&args);
-			write(2, "Error\n", 6);
-			exit(1);
-		}
+			free_and_exit(stack_a, args);
 		if (duplicates_present(*stack_a, (int)n))
-		{
-			free_stack(stack_a);
-			free_array(&args);
-			write(2, "Error\n", 6);
-			exit(1);
-		}
+			free_and_exit(stack_a, args);
 		node_append(stack_a, (int)n);
+		if (!(*stack_a))
+			free_and_exit(stack_a, args);
 		i++;
 	}
-	free_array(&args);
+	free_array(args);
 }

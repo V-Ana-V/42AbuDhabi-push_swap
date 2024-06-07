@@ -12,7 +12,8 @@
 
 #include "push_swap.h"
 
-static void	rotate_together(t_nodes **a, t_nodes **b, t_nodes *cheapest_node, bool rev)
+static void	rotate_together(t_nodes **a, t_nodes **b,
+	t_nodes *cheapest_node, bool rev)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
 		r_both(a, b, rev);
@@ -20,7 +21,7 @@ static void	rotate_together(t_nodes **a, t_nodes **b, t_nodes *cheapest_node, bo
 	set_stack_indices(*b);
 }
 
-static void move_a_to_b(t_nodes **a, t_nodes **b)
+static void	move_a_to_b(t_nodes **a, t_nodes **b)
 {
 	t_nodes	*cheapest_node;
 
@@ -42,7 +43,7 @@ static void	move_b_to_a(t_nodes **a, t_nodes **b)
 
 static void	min_to_top(t_nodes **a)
 {
-	t_nodes *min;
+	t_nodes	*min;
 
 	min = find_min(*a);
 	while ((*a)->number != min->number)
@@ -54,9 +55,9 @@ static void	min_to_top(t_nodes **a)
 	}
 }
 
-void    sort_stacks(t_nodes **a, t_nodes **b)
+void	sort_stacks(t_nodes **a, t_nodes **b)
 {
-	int len_a;
+	int	len_a;
 
 	len_a = st_len(*a);
 	if (len_a-- > 3 && !already_sorted(*a))
@@ -69,7 +70,7 @@ void    sort_stacks(t_nodes **a, t_nodes **b)
 		move_a_to_b(a, b);
 	}
 	sort_3nodes(a);
-	while(*b)
+	while (*b)
 	{
 		init_nodes_b(*a, *b);
 		move_b_to_a(a, b);

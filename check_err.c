@@ -15,10 +15,11 @@
 bool	is_number(char *s)
 {
 	if (!s || !(*s))
-        return (false);
+		return (false);
 	if (!(ft_isdigit(*s) || *s == '+' || *s == '-'))
 		return (false);
-	else if ((*s == '+' || *s == '-') && (!(*(s + 1)) || !(ft_isdigit(*(s + 1)))))
+	else if ((*s == '+' || *s == '-') && (!(*(s + 1))
+			|| !(ft_isdigit(*(s + 1)))))
 		return (false);
 	s++;
 	while (*s)
@@ -27,7 +28,7 @@ bool	is_number(char *s)
 			return (false);
 		s++;
 	}
-	return(true);
+	return (true);
 }
 
 void	non_numbers_check(t_arr	args)
@@ -47,7 +48,7 @@ void	non_numbers_check(t_arr	args)
 	}
 }
 
-bool	duplicates_present(t_nodes	*stack, int	n)
+bool	duplicates_present(t_nodes *stack, int n)
 {
 	if (!stack)
 		return (0);
@@ -60,16 +61,17 @@ bool	duplicates_present(t_nodes	*stack, int	n)
 	return (false);
 }
 
-// void free_and_exit(t_nodes **stack)
-// {
-// 	free_stack(stack);
-// 	ft_printf("Error\n");
-// 	exit(1);
-// }
+void	free_and_exit(t_nodes **stack, t_arr *arr)
+{
+	free_array(arr);
+	free_stack(stack);
+	ft_printf("Error\n");
+	exit(1);
+}
 
-// int main(int ac, char **av)
-// {
-// 	(void) ac;
-// 	printf("%d\n", is_number(av[1]));
-// 	return(0);
-// }
+void	free_and_exit_args_only(t_arr *arr)
+{
+	free_array(arr);
+	ft_printf("Error\n");
+	exit(1);
+}

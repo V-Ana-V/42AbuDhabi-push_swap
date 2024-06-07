@@ -89,13 +89,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int	ft_printchar(int c);
-int	ft_printstr(char *s);
-int	ft_printp(void *ptr);
-int	ft_printint(int nb);
-int	ft_printud(unsigned int nb);
-int	ft_printhex(unsigned int nb, char c);
-int	ft_printf(const char *str, ...);
+int		ft_printchar(int c);
+int		ft_printstr(char *s);
+int		ft_printp(void *ptr);
+int		ft_printint(int nb);
+int		ft_printud(unsigned int nb);
+int		ft_printhex(unsigned int nb, char c);
+int		ft_printf(const char *str, ...);
 
 size_t	ft_strchr_gnl(const char *buffer, char c, size_t len);
 void	set_buffer(t_buffer *buffer, char *buf_buf, size_t buf_len);

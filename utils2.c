@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_nodes *find_max(t_nodes *stack)
+t_nodes	*find_max(t_nodes *stack)
 {
 	int		max;
 	t_nodes	*max_node;
