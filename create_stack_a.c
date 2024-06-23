@@ -76,6 +76,7 @@ static void	node_append(t_nodes	**stack, int n)
 	}
 	new_node->next = NULL;
 	new_node->number = n;
+	new_node->cheapest = false;
 	if (!(*stack))
 	{
 		*stack = new_node;

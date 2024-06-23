@@ -57,23 +57,26 @@ static void	min_to_top(t_nodes **a)
 
 void	sort_stacks(t_nodes **a, t_nodes **b)
 {
-	int	len_a;
-
-	len_a = st_len(*a);
-	if (len_a-- > 3 && !already_sorted(*a))
+	if (st_len(*a) > 3 && !already_sorted(*a))
 		push(b, a, 'b');
-	if (len_a-- > 3 && !already_sorted(*a))
+	if (st_len(*a) > 3 && !already_sorted(*a))
 		push(b, a, 'b');
-	while (len_a-- > 3 && !already_sorted(*a))
+	while (st_len(*a) > 3 && !already_sorted(*a))
 	{
 		init_nodes_a(*a, *b);
 		move_a_to_b(a, b);
+		init_nodes_a(*a, *b);
 	}
-	sort_3nodes(a);
+	if (st_len(*a) == 3 && !already_sorted(*a))
+	{
+		sort_3nodes(a);
+		init_nodes_a(*a, *b);
+	}
 	while (*b)
 	{
 		init_nodes_b(*a, *b);
 		move_b_to_a(a, b);
+		init_nodes_b(*a, *b);
 	}
 	set_stack_indices(*a);
 	min_to_top(a);
