@@ -65,13 +65,13 @@ void	free_and_exit(t_nodes **stack, t_arr *arr)
 {
 	free_array(arr);
 	free_stack(stack);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
 void	free_and_exit_args_only(t_arr *arr)
 {
 	free_array(arr);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }
